@@ -71,7 +71,7 @@
     uint8_t buf[2];
     HAL_I2C_Mem_Read(&hi2c, AS5600_AS5601_DEV_ADDRESS,
       AS5600_AS5601_REG_RAW_ANGLE, I2C_MEMADD_SIZE_8BIT,
-      (uint8_t*)buf, 2, AS5600_I2C_TIMEOUT_MS);
+      (uint8_t*)buf, 2, 1000);
     uint16_t RawAngle;
     RawAngle = (uint16_t) buf[0] << 8 | (uint16_t) buf[1];
     RawAngle &= 0x0FFF;

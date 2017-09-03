@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export version="D">
+  <design>
+    <source>C:\KiCad_ws\Arduino_DCMotorMotionControlShield\AS5600_v01\AS5600_v01.sch</source>
+    <date>2017/06/24 23:30:42</date>
+    <tool>Eeschema 4.0.1-stable</tool>
+    <sheet number="1" name="/" tstamps="/">
+      <title_block>
+        <title/>
+        <company/>
+        <rev/>
+        <date/>
+        <source>AS5600_v01.sch</source>
+        <comment number="1" value=""/>
+        <comment number="2" value=""/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+      </title_block>
+    </sheet>
+  </design>
+  <components>
+    <comp ref="IC1">
+      <value>AS5600</value>
+      <footprint>Housings_SOIC:SOIC-8_3.9x4.9mm_Pitch1.27mm</footprint>
+      <libsource lib="user" part="AS5600"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>594F3E3A</tstamp>
+    </comp>
+    <comp ref="P1">
+      <value>CONN_01X06</value>
+      <libsource lib="conn" part="CONN_01X06"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>594F3E81</tstamp>
+    </comp>
+    <comp ref="R1">
+      <value>4.7k</value>
+      <footprint>Resistors_SMD:R_0603_HandSoldering</footprint>
+      <datasheet>http://akizukidenshi.com/catalog/g/gR-06472/</datasheet>
+      <libsource lib="device" part="R_Small"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>594F42E7</tstamp>
+    </comp>
+    <comp ref="C1">
+      <value>0.1u</value>
+      <footprint>Capacitors_SMD:C_0603_HandSoldering</footprint>
+      <datasheet>http://akizukidenshi.com/catalog/g/gP-05616/</datasheet>
+      <libsource lib="device" part="C_Small"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>594F4454</tstamp>
+    </comp>
+    <comp ref="C2">
+      <value>1u</value>
+      <footprint>Capacitors_SMD:C_0603_HandSoldering</footprint>
+      <datasheet>http://akizukidenshi.com/catalog/g/gP-09348/</datasheet>
+      <libsource lib="device" part="C_Small"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>594F4545</tstamp>
+    </comp>
+    <comp ref="JP1">
+      <value>J_5V</value>
+      <footprint>Resistors_SMD:R_0402_NoSilk</footprint>
+      <libsource lib="device" part="Jumper_NO_Small"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>594F4BE6</tstamp>
+    </comp>
+    <comp ref="R2">
+      <value>4.7k</value>
+      <footprint>Resistors_SMD:R_0603_HandSoldering</footprint>
+      <datasheet>http://akizukidenshi.com/catalog/g/gR-06472/</datasheet>
+      <libsource lib="device" part="R_Small"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>594F4FF9</tstamp>
+    </comp>
+    <comp ref="JP2">
+      <value>J_3.3V</value>
+      <footprint>Resistors_SMD:R_0402_NoSilk</footprint>
+      <libsource lib="device" part="Jumper_NO_Small"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamp>594F5121</tstamp>
+    </comp>
+  </components>
+  <libparts>
+    <libpart lib="user" part="AS5600">
+      <description>Line Receiver</description>
+      <footprints>
+        <fp>DIP*</fp>
+        <fp>PDIP*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">U</field>
+        <field name="Value">AS5600</field>
+      </fields>
+      <pins>
+        <pin num="1" name="VDD5V" type="power_in"/>
+        <pin num="2" name="VDD3V3" type="power_in"/>
+        <pin num="3" name="OUT" type="passive"/>
+        <pin num="4" name="GND" type="power_in"/>
+        <pin num="5" name="PGO" type="passive"/>
+        <pin num="6" name="SDA" type="passive"/>
+        <pin num="7" name="SCL" type="passive"/>
+        <pin num="8" name="DIR" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="conn" part="CONN_01X06">
+      <description>Connector 01x06</description>
+      <footprints>
+        <fp>Pin_Header_Straight_1X06</fp>
+        <fp>Pin_Header_Angled_1X06</fp>
+        <fp>Socket_Strip_Straight_1X06</fp>
+        <fp>Socket_Strip_Angled_1X06</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">P</field>
+        <field name="Value">CONN_01X06</field>
+      </fields>
+      <pins>
+        <pin num="1" name="P1" type="passive"/>
+        <pin num="2" name="P2" type="passive"/>
+        <pin num="3" name="P3" type="passive"/>
+        <pin num="4" name="P4" type="passive"/>
+        <pin num="5" name="P5" type="passive"/>
+        <pin num="6" name="P6" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="device" part="C_Small">
+      <description>Unpolarized capacitor</description>
+      <footprints>
+        <fp>C?</fp>
+        <fp>C_????_*</fp>
+        <fp>C_????</fp>
+        <fp>SMD*_c</fp>
+        <fp>Capacitor*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">C</field>
+        <field name="Value">C_Small</field>
+      </fields>
+      <pins>
+        <pin num="1" name="~" type="passive"/>
+        <pin num="2" name="~" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="device" part="Jumper_NO_Small">
+      <description>Jumper normally open</description>
+      <fields>
+        <field name="Reference">JP</field>
+        <field name="Value">Jumper_NO_Small</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="passive"/>
+        <pin num="2" name="2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="device" part="R_Small">
+      <description>Resistor</description>
+      <footprints>
+        <fp>Resistor_*</fp>
+        <fp>R_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">R</field>
+        <field name="Value">R_Small</field>
+      </fields>
+      <pins>
+        <pin num="1" name="~" type="passive"/>
+        <pin num="2" name="~" type="passive"/>
+      </pins>
+    </libpart>
+  </libparts>
+  <libraries>
+    <library logical="user">
+      <uri>C:\Program Files\KiCad\share\kicad\library\user.lib</uri>
+    </library>
+    <library logical="conn">
+      <uri>C:\Program Files\KiCad\share\kicad\library\conn.lib</uri>
+    </library>
+    <library logical="device">
+      <uri>C:\Program Files\KiCad\share\kicad\library\device.lib</uri>
+    </library>
+  </libraries>
+  <nets>
+    <net code="1" name="+3V3">
+      <node ref="IC1" pin="2"/>
+      <node ref="P1" pin="2"/>
+      <node ref="C2" pin="1"/>
+      <node ref="JP2" pin="1"/>
+    </net>
+    <net code="2" name="Net-(JP1-Pad1)">
+      <node ref="JP2" pin="2"/>
+      <node ref="R1" pin="1"/>
+      <node ref="JP1" pin="1"/>
+      <node ref="R2" pin="1"/>
+    </net>
+    <net code="3" name="GND">
+      <node ref="IC1" pin="8"/>
+      <node ref="IC1" pin="4"/>
+      <node ref="P1" pin="3"/>
+      <node ref="C2" pin="2"/>
+      <node ref="C1" pin="2"/>
+    </net>
+    <net code="4" name="+5V">
+      <node ref="P1" pin="1"/>
+      <node ref="IC1" pin="1"/>
+      <node ref="C1" pin="1"/>
+      <node ref="JP1" pin="2"/>
+    </net>
+    <net code="5" name="Net-(IC1-Pad5)">
+      <node ref="IC1" pin="5"/>
+    </net>
+    <net code="6" name="/OUT">
+      <node ref="IC1" pin="3"/>
+      <node ref="P1" pin="4"/>
+    </net>
+    <net code="7" name="/SDA">
+      <node ref="R2" pin="2"/>
+      <node ref="IC1" pin="6"/>
+      <node ref="P1" pin="6"/>
+    </net>
+    <net code="8" name="/SCL">
+      <node ref="R1" pin="2"/>
+      <node ref="IC1" pin="7"/>
+      <node ref="P1" pin="5"/>
+    </net>
+  </nets>
+</export>

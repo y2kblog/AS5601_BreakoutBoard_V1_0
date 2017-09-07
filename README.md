@@ -56,7 +56,7 @@
       Wire.write(AS5600_AS5601_REG_RAW_ANGLE);
       Wire.endTransmission(false);
       Wire.requestFrom(AS5600_AS5601_DEV_ADDRESS, 2);
-      uint16_t RawAngle;
+      uint16_t RawAngle = 0;
       RawAngle  = ((uint16_t)Wire.read() << 8) & 0x0F00;
       RawAngle |= (uint16_t)Wire.read();
       // Raw angle value (0x0000~0x0FFF) is stored in RawAngle

@@ -38,7 +38,7 @@
 **取付例**  
 <img src="/images/Assemble_sample.jpg" width="250px">
 
-## サンプルプログラム (Arduino)  
+## Arduinoによるプログラム例  
 
 ### I2Cのみを用いた角度の取得  
 #### 配線図  
@@ -47,7 +47,7 @@
 #### ソースファイルのディレクトリ  
 "SampleCode/Arduino/I2C_SampleCode/I2C_SampleCode.ino"
 
-#### サンプルコード (最小構成)  
+#### 最小構成  
 
     #include <stdint.h>
     #include <Wire.h>

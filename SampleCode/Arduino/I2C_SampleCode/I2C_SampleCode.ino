@@ -1,3 +1,8 @@
+/* ----- Pin setting -----
+   PC4 - Analog   4 - Encoder SDA
+   PC5 - Analog   5 - Encoder SCL
+*/
+
 #include <stdint.h>
 #include <Wire.h>
 

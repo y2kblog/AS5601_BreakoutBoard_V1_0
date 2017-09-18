@@ -53,7 +53,7 @@
 #### ソースファイルのディレクトリ  
 "SampleCode/Arduino/I2C_SampleCode/I2C_SampleCode.ino"
 
-#### 最小構成  
+#### ミニマムコード  
 
     #include <stdint.h>
     #include <Wire.h>

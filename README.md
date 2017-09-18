@@ -1,5 +1,3 @@
-
-
 # 12bit磁気式エンコーダAS5601 Breakout Board
 
 <img src="/images/EncoderPCB_image_BothSide.png" width="500px">

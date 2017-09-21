@@ -44,9 +44,9 @@
 
 ## Arduinoによるプログラム例  
 
-### I2Cのみを用いた角度の取得  
+### I2Cによる角度の取得  
 #### 配線図  
-<img src="/images/WiringDiagram_I2C.png" width="400px">
+<img src="/images/WiringDiagram_I2C.png" width="300px">
 
 #### [ソースファイル](https://github.com/y2kblog/AS5601_BreakoutBoard_V1_0/blob/master/SampleCode/Arduino/I2C_SampleCode/I2C_SampleCode.ino)
 
@@ -83,7 +83,7 @@
 
 ### インクリメンタル出力ピンを用いた角度の取得  
 #### 配線図  
-<img src="/images/WiringDiagram_Incremental.png" width="400px">
+<img src="/images/WiringDiagram_Incremental.png" width="300px">
 
 #### [ソースファイル](https://github.com/y2kblog/AS5601_BreakoutBoard_V1_0/blob/master/SampleCode/Arduino/Incremental_SampleCode/Incremental_SampleCode.ino)
 

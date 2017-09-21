@@ -48,8 +48,12 @@
 #### 配線図  
 <img src="/images/WiringDiagram_I2C.png" width="400px">
 
+#### [ソースファイル](https://github.com/y2kblog/AS5601_BreakoutBoard_V1_0/blob/master/SampleCode/Arduino/I2C_SampleCode/I2C_SampleCode.ino)
+
+<!--
 #### ソースファイルのディレクトリ  
 "SampleCode/Arduino/I2C_SampleCode/I2C_SampleCode.ino"
+-->
 
 #### ミニマムコード  
 
@@ -81,9 +85,12 @@
 #### 配線図  
 <img src="/images/WiringDiagram_Incremental.png" width="400px">
 
+#### [ソースファイル](https://github.com/y2kblog/AS5601_BreakoutBoard_V1_0/blob/master/SampleCode/Arduino/Incremental_SampleCode/Incremental_SampleCode.ino)
+
+<!--
 #### ソースファイルのディレクトリ  
 "SampleCode/Arduino/Incremental_SampleCode/Incremental_SampleCode.ino"
-
+-->
 
 <!--
 #### HAL (STM32)

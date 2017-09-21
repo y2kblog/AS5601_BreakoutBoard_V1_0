@@ -75,7 +75,7 @@
       uint16_t RawAngle = 0;
       RawAngle  = ((uint16_t)Wire.read() << 8) & 0x0F00;
       RawAngle |= (uint16_t)Wire.read();
-      // Raw angle value (0x0000~0x0FFF) is stored in RawAngle
+      // Raw angle value (0 ~ 4095) is stored in RawAngle
     }
 
     void loop() {
@@ -130,7 +130,6 @@
 
     void Encoder_I2C_init(void) {
       // Set AS5601 resolution 2048ppr
-      Serial.println("Change Encoder resolution 2048ppr");
       Wire.beginTransmission(AS5600_AS5601_DEV_ADDRESS);
       Wire.write(AS5601_REG_ABN);
       Wire.write(0b00001000);   // ABN(3:0)
@@ -149,7 +148,7 @@
     }
 
     void loop() {
-      // Angle value (0x0000~0x07FF) is stored in EncoderCount
+      // Angle value (0 ~ 2047) is stored in EncoderCount
     }
 
 

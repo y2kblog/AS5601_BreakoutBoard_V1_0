@@ -26,6 +26,9 @@
 ### 寸法  
 <img src="/images/EncoderPCB_image.jpg" width="250px">
 
+### 回路図  
+<img src="/images/CircuitDiagram.png" width="450px">
+
 ## 販売
 検討中
 

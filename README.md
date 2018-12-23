@@ -23,20 +23,22 @@
 - 電源電圧に5Vを供給する場合は3.3Vピンをオープンに、3.3Vを供給する場合は5Vピンにも3.3Vを供給してください。
 - PUSHピンは接続されていないためアクセスできません
 
-### 寸法  
-<img src="/images/EncoderPCB_image.jpg" width="250px">
-
-### 回路図  
-<img src="/images/CircuitDiagram.png" width="450px">
 
 ## 販売  
 [スイッチサイエンス委託販売ページ](https://www.switch-science.com/catalog/3494/)  
+※大量注文や在庫に関する問い合わせは[こちら](mailto:info.y2kb@gmail.com)までご連絡ください。  
 
 ## 内容物
 - AS5601 Breakout Board 本体
 - エンコーダ用ネオジム磁石
 
 <img src="/images/Product_photo.jpg" width="200px">
+
+### 回路図  
+<img src="/images/CircuitDiagram.png" width="450px">
+
+### 寸法  
+<img src="/images/EncoderPCB_image.jpg" width="200px">
 
 ## 取付方法
 1. 同梱のネオジム磁石を回転体の軸中心に取り付けます

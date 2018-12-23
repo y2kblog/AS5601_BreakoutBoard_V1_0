@@ -16,7 +16,7 @@
 volatile int32_t EncoderCount;
 
 void Encoder_GPIO_init(void) {
-  DDRD  &= ~((1 << PD2) | (1 << PD3));  // Set PD2 and PD3 as input
+  DDRD  &= ~((1 << PD2) | (1 << PD3));  // Set PD2 andEncoder_burn_config PD3 as input
   EICRA = 0b00000101; // Trigger event of INT0 and INT1 : Any Logic Change
   EIMSK = 0b00000011; // Enable interrupt INT0 and INT1
   sei();              //Enable Global Interrupt
@@ -53,6 +53,7 @@ void Encoder_I2C_init(void) {
   Wire.requestFrom(AS5600_AS5601_DEV_ADDRESS, 1);
   data = Wire.read();
   data &= 0x38;
+  /*
   if (data != 0x20)
   {
     Serial.print("Magnet error : ");
@@ -67,6 +68,7 @@ void Encoder_I2C_init(void) {
   }
   else
     Serial.println("Magnet : OK");
+    */
 
   // Set AS5601 resolution 2048ppr
   Serial.println("Change Encoder resolution 2048ppr");
@@ -123,5 +125,3 @@ void loop() {
   Serial.println(EncoderCount);
   delay(200);
 }
-
-

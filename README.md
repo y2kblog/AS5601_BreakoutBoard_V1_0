@@ -181,19 +181,13 @@
 
 -->
 
+### 設定レジスタの焼き付けによる分解能の固定
 
+AS5601のデフォルトの分解能は8pprなので、初期状態ですと電源投入毎に分解能を設定する必要があります。
+そこで、分解能を2048pprに設定後にBurn_Settingコマンドにより設定レジスタを焼くことで、電源を落として再度電源を投入しても起動時から2048pprに設定された状態で固定され、I2Cにより分解能等の設定情報を再設定する必要がなくなります。  
+**※一度書き込むと以後分解能やフィルタ設定などを変更することはできなくなります。**
 
-
-
-
-
-
-
-
-
-
-
-
+サンプルコードは[こちら](https://github.com/y2kblog/AS5601_BreakoutBoard_V1_0/blob/master/SampleCode/Arduino/burnConfig_SampleCode/burnConfig_SampleCode.ino)。
 
 
 ## License

@@ -62,29 +62,31 @@
 
 #### ミニマムコード  
 
-    #include <stdint.h>
-    #include <Wire.h>
-    #define AS5600_AS5601_DEV_ADDRESS      0x36
-    #define AS5600_AS5601_REG_RAW_ANGLE    0x0C
+```cpp
+#include <stdint.h>
+#include <Wire.h>
+#define AS5600_AS5601_DEV_ADDRESS      0x36
+#define AS5600_AS5601_REG_RAW_ANGLE    0x0C
 
-    void setup() {
-      // I2C init
-      Wire.begin();
-      Wire.setClock(400000);
+void setup() {
+  // I2C init
+  Wire.begin();
+  Wire.setClock(400000);
 
-      // Read RAW_ANGLE value from encoder
-      Wire.beginTransmission(AS5600_AS5601_DEV_ADDRESS);
-      Wire.write(AS5600_AS5601_REG_RAW_ANGLE);
-      Wire.endTransmission(false);
-      Wire.requestFrom(AS5600_AS5601_DEV_ADDRESS, 2);
-      uint16_t RawAngle = 0;
-      RawAngle  = ((uint16_t)Wire.read() << 8) & 0x0F00;
-      RawAngle |= (uint16_t)Wire.read();
-      // Raw angle value (0 ~ 4095) is stored in RawAngle
-    }
+  // Read RAW_ANGLE value from encoder
+  Wire.beginTransmission(AS5600_AS5601_DEV_ADDRESS);
+  Wire.write(AS5600_AS5601_REG_RAW_ANGLE);
+  Wire.endTransmission(false);
+  Wire.requestFrom(AS5600_AS5601_DEV_ADDRESS, 2);
+  uint16_t RawAngle = 0;
+  RawAngle  = ((uint16_t)Wire.read() << 8) & 0x0F00;
+  RawAngle |= (uint16_t)Wire.read();
+  // Raw angle value (0 ~ 4095) is stored in RawAngle
+}
 
-    void loop() {
-    }
+void loop() {
+}
+```
 
 ### インクリメンタル出力ピンを用いた角度の取得  
 #### 配線図  
@@ -98,64 +100,64 @@
 -->
 
 #### ミニマムコード
+```cpp
+#include <stdint.h>
+#include <Wire.h>
+#define AS5600_AS5601_DEV_ADDRESS       0x36
+#define AS5601_REG_ABN                  0x09
 
-    #include <stdint.h>
-    #include <Wire.h>
-    #define AS5600_AS5601_DEV_ADDRESS       0x36
-    #define AS5601_REG_ABN                  0x09
+volatile int32_t EncoderCount;
 
-    volatile int32_t EncoderCount;
+void Encoder_GPIO_init(void) {
+  DDRD  &= ~((1 << PD2) | (1 << PD3));  // Set PD2 and PD3 as input
+  EICRA = 0b00000101; // Trigger event of INT0 and INT1 : Any Logic Change
+  EIMSK = 0b00000011; // Enable interrupt INT0 and INT1
+  sei();              //Enable Global Interrupt
+}
 
-    void Encoder_GPIO_init(void) {
-      DDRD  &= ~((1 << PD2) | (1 << PD3));  // Set PD2 and PD3 as input
-      EICRA = 0b00000101; // Trigger event of INT0 and INT1 : Any Logic Change
-      EIMSK = 0b00000011; // Enable interrupt INT0 and INT1
-      sei();              //Enable Global Interrupt
-    }
+// Encoder "A" pin logic change interrupt callback function
+ISR(INT0_vect) {
+  updateEncoderCount();
+}
 
-    // Encoder "A" pin logic change interrupt callback function
-    ISR(INT0_vect) {
-      updateEncoderCount();
-    }
+// Encoder "B" pin logic change interrupt callback function
+ISR(INT1_vect) {
+  updateEncoderCount();
+}
 
-    // Encoder "B" pin logic change interrupt callback function
-    ISR(INT1_vect) {
-      updateEncoderCount();
-    }
+void updateEncoderCount(void) {
+  const static int8_t EncoderIndexTable[] =
+    {0, -1, 1, 0,  1, 0, 0, -1,  -1, 0, 0, 1,  0, 1, -1, 0};
+  static uint8_t EncoderPinState_Now, EncoderPinState_Prev = 0;
 
-    void updateEncoderCount(void) {
-      const static int8_t EncoderIndexTable[] =
-        {0, -1, 1, 0,  1, 0, 0, -1,  -1, 0, 0, 1,  0, 1, -1, 0};
-      static uint8_t EncoderPinState_Now, EncoderPinState_Prev = 0;
+  EncoderPinState_Now = (PIND >> 2) & 0x03; // Bit1 : PD3 (Encoder B), Bit0 : PD2 (Encoder A)
+  EncoderCount += EncoderIndexTable[EncoderPinState_Prev << 2 | EncoderPinState_Now];
+  EncoderPinState_Prev = EncoderPinState_Now;
+}
 
-      EncoderPinState_Now = (PIND >> 2) & 0x03; // Bit1 : PD3 (Encoder B), Bit0 : PD2 (Encoder A)
-      EncoderCount += EncoderIndexTable[EncoderPinState_Prev << 2 | EncoderPinState_Now];
-      EncoderPinState_Prev = EncoderPinState_Now;
-    }
+void Encoder_I2C_init(void) {
+  // Set AS5601 resolution 2048ppr
+  Wire.beginTransmission(AS5600_AS5601_DEV_ADDRESS);
+  Wire.write(AS5601_REG_ABN);
+  Wire.write(0b00001000);   // ABN(3:0)
+  Wire.endTransmission();
+  delay(1);
+}
 
-    void Encoder_I2C_init(void) {
-      // Set AS5601 resolution 2048ppr
-      Wire.beginTransmission(AS5600_AS5601_DEV_ADDRESS);
-      Wire.write(AS5601_REG_ABN);
-      Wire.write(0b00001000);   // ABN(3:0)
-      Wire.endTransmission();
-      delay(1);
-    }
+void setup() {
+  // I2C init
+  Wire.begin();
+  Wire.setClock(400000);
 
-    void setup() {
-      // I2C init
-      Wire.begin();
-      Wire.setClock(400000);
+  // Peripheral init
+  Encoder_I2C_init();
+  Encoder_GPIO_init();
+}
 
-      // Peripheral init
-      Encoder_I2C_init();
-      Encoder_GPIO_init();
-    }
-
-    void loop() {
-      // Angle value (0 ~ 2047) is stored in EncoderCount
-    }
-
+void loop() {
+  // Angle value (0 ~ 2047) is stored in EncoderCount
+}
+```
 
 <!--
 #### HAL (STM32)

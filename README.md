@@ -189,6 +189,11 @@ AS5601のデフォルトの分解能は8pprなので、初期状態ですと電�
 
 サンプルコードは[こちら](https://github.com/y2kblog/AS5601_BreakoutBoard_V1_0/blob/master/SampleCode/Arduino/burnConfig_SampleCode/burnConfig_SampleCode.ino)。
 
+## 資料
+
+### 3Dデータ
+- STEPファイルダウンロード：<a href="https://github.com/y2kblog/AS5601_BreakoutBoard_V1_0/raw/master/PCB_source/step/AS5601_BreakoutBoard_V1_0_step.zip" download="">AS5601_BreakoutBoard_V1_0_step.zip</a>  
+
 
 ## License
 MIT License

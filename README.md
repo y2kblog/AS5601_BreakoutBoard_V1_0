@@ -193,8 +193,8 @@ AS5601のデフォルトの分解能は8pprなので、初期状態ですと電�
 
 ## 資料
 
-### 3Dデータ
-- STEPファイルダウンロード：<a href="https://github.com/y2kblog/AS5601_BreakoutBoard_V1_0/raw/master/PCB_source/step/AS5601_BreakoutBoard_V1_0_step.zip" download="">AS5601_BreakoutBoard_V1_0_step.zip</a>  
+- 2Dデータ(DXF)：<a href="https://github.com/y2kblog/AS5601_BreakoutBoard_V1_0/raw/master/PCB_source/dxf/AS5601_BreakoutBoard_V1_0_dxf.zip" download="">AS5601_BreakoutBoard_V1_0_dxf.zip</a>  
+- 3Dデータ(STEP)：<a href="https://github.com/y2kblog/AS5601_BreakoutBoard_V1_0/raw/master/PCB_source/step/AS5601_BreakoutBoard_V1_0_step.zip" download="">AS5601_BreakoutBoard_V1_0_step.zip</a>  
 
 
 ## License

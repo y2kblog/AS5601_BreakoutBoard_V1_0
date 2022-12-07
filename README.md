@@ -1,5 +1,7 @@
 # 12bit (4096P/R) 磁気式エンコーダAS5601 Breakout Board
 
+[English page](https://products.y2kb.com/en/as5601-breakout/latest/)
+
 <img src="/images/EncoderPCB_image_BothSide.png" width="500px">
 
 ## 概要

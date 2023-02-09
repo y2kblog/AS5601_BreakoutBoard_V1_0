@@ -1,5 +1,0 @@
-(sym_lib_table
-  (lib (name AS5601_BreakoutBoard_V1_0-rescue)(type Legacy)(uri ${KIPRJMOD}/AS5601_BreakoutBoard_V1_0-rescue.lib)(options "")(descr ""))
-  (lib (name Logo_DirRot_v01)(type Legacy)(uri ${KIPRJMOD}/logos.pretty/Logo_DirRot_v01.lib)(options "")(descr ""))
-  (lib (name AS5601_breakout)(type Legacy)(uri ${KIPRJMOD}/symbol/AS5601_breakout.lib)(options "")(descr ""))
-)
